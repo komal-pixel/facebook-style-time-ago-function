@@ -1,20 +1,20 @@
 <?php
-date_default_timezone_set('Asia/Calcutta');
+date_default_timezone_set('Asia/Calcutta');  //set time zone
 // $t=time();
 // echo date('Y-m-d');
-echo  time_ago(date('2019-12-11 17:18:00'));
+echo  time_ago(date('2019-12-11 17:18:00'));//change the date and time to check the  variousoutput
 
 function time_ago($timestamp){
-	$time_ago = strtotime($timestamp);
-	$current_time = time();
+	$time_ago = strtotime($timestamp);   //calculate timestamp in second since 1 jan 1970
+	$current_time = time();			//show current system generated time.time 
 	$time_difference = $current_time - $time_ago;
-	$seconds = $time_difference;
-	$minutes = round($time_difference / 60);
-	$hours = round($time_difference /3600);
-	$days = round($time_difference / 24 * 60 * 60);
-	$weeks = round($time_difference / 7 * 24 * 60 * 60);
-	$months =round($seconds  /262944);
-	$years =round($seconds/31553280);
+	$seconds = $time_difference;			//time in no of seconds
+	$minutes = round($time_difference / 60);	   //value in 60 sec
+	$hours = round($time_difference /3600);   	//time in 1hour =60sec *60sec
+	$days = round($time_difference / 24 * 60 * 60);	//per day
+	$weeks = round($time_difference / 7 * 24 * 60 * 60); 	//per weeks
+	$months =round($seconds  /262944);			//per months
+	$years =round($seconds/31553280);			//per years
 
 	if($seconds<=60){
 
